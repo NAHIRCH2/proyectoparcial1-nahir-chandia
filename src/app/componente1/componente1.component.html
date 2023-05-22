@@ -1,0 +1,24 @@
+<button (click)="activarCrear()">CREAR POSTEO</button>
+
+<div *ngIf="activar_creacion == true && numero_editar !== 1">
+  <input [(ngModel)]="crear_posteo" placeholder="CREAR POSTEO"><br><br>
+  <button (click)="crearPosteo()">CREAR</button>
+</div>
+
+<div *ngIf="numero_editar == 1">
+  <h1>{{crear_posteo_actualizado}}</h1>
+  
+  <input [(ngModel)]="editar_titulo" placeholder="ingresar titulo">
+  <button (click)="guardarTitulo()">ACTUALIZAR título</button><br><br>
+  
+  <h2>{{subtitulo_actualizado}}</h2>
+<input [(ngModel)]="subtitulo" placeholder="ingresar subtitulo">
+<button (click)="guardarSubtitulo()">ACTUALIZAR SUBTITULO</button><br><br>
+
+<h2>{{cuerpo_actualizado}}</h2>
+<input [(ngModel)]="cuerpo" placeholder="ingresar el cuerpo">
+<button (click)="guardarCuerpo()">ACTUALIZAR CUERPO</button><br><br>
+
+  
+  <button (click)="cancelarEdicion()">CANCELAR</button>
+</div>
